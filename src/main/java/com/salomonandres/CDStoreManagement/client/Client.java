@@ -1,65 +1,81 @@
 package com.salomonandres.CDStoreManagement.client;
 
+import javax.persistence.*;
 import java.math.BigInteger;
 
+@Entity
+@Table
 public class Client {
-    private BigInteger id_Client;
-    private String first_Name;
-    private String last_Name;
-    private String billing_Address;
-    private Integer zip_Code;
+    @Id
+    @SequenceGenerator(name="client_Sequence",sequenceName = "client_Sequence" ,allocationSize = 1
+    )
+    @GeneratedValue(strategy =GenerationType.SEQUENCE,
+    generator="client_Sequence")
+    private BigInteger idClient;
+    private String firstName;
+    private String lastName;
+    private String billingAddress;
+    private Integer zipCode;
     private String email;
 
     public Client() {
     }
 
-    public Client(BigInteger id_Client, String first_Name, String last_Name, String billing_Address, Integer zip_Code, String email) {
-        this.id_Client = id_Client;
-        this.first_Name = first_Name;
-        this.last_Name = last_Name;
-        this.billing_Address = billing_Address;
-        this.zip_Code = zip_Code;
+    public Client(BigInteger idClient, String firstName, String lastName, String billingAddress, Integer zipCode, String email) {
+        this.idClient = idClient;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.billingAddress = billingAddress;
+        this.zipCode = zipCode;
         this.email = email;
     }
 
-    public BigInteger getId_Client() {
-        return id_Client;
+    public Client(String firstName, String lastName, String billingAddress, Integer zipCode, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.billingAddress = billingAddress;
+        this.zipCode = zipCode;
+        this.email = email;
     }
 
-    public void setId_Client(BigInteger id_Client) {
-        this.id_Client = id_Client;
+    public BigInteger getIdClient() {
+        return idClient;
     }
 
-    public String getFirst_Name() {
-        return first_Name;
+    public void setIdClient(BigInteger idClient) {
+        this.idClient = idClient;
     }
 
-    public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLast_Name() {
-        return last_Name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getBilling_Address() {
-        return billing_Address;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public void setBilling_Address(String billing_Address) {
-        this.billing_Address = billing_Address;
+    public String getBillingAddress() {
+        return billingAddress;
     }
 
-    public Integer getZip_Code() {
-        return zip_Code;
+    public void setBillingAddress(String billingAddress) {
+        this.billingAddress = billingAddress;
     }
 
-    public void setZip_Code(Integer zip_Code) {
-        this.zip_Code = zip_Code;
+    public Integer getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(Integer zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getEmail() {

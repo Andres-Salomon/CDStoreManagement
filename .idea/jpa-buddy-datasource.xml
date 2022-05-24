@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="66e18d28-dc66-4d33-a2f5-41466ea6a38a" name="CDStoreManagement" url="jdbc:postgresql://localhost:5432/CDStoreManagement" driverClass="org.postgresql.Driver" />
+    </data-sources>
+  </component>
+</project>

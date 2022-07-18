@@ -11,7 +11,7 @@ public class Main {
             SpringApplication.run(Main.class,args);
         }
         catch(Exception e){
-            System.out.println(e.getCause());
+            System. out.println(e.getCause());
         }
 
     }
